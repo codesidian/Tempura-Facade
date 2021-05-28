@@ -1,18 +1,23 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+        <v-item-group app color="blue-grey darken-3" class="sensor">
+
+    <v-row>    
+<SensorCard></SensorCard>
+<SensorCard></SensorCard>
+</v-row>
+</v-item-group>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import SensorCard from '@/components/SensorCard';
 export default {
-  name: "Home",
-  components: {
-    HelloWorld,
-  },
+    name: 'Home',
+    components:{
+        SensorCard,
+    }
 };
 </script>
+
+<style>
+
+</style>
