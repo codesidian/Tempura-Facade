@@ -1,7 +1,7 @@
 <template>
-<v-container fluid>
-      <SensorList :sensors="sensors"/>
-</v-container>
+    <v-container fluid>
+        <SensorList :sensors="sensors" />
+    </v-container>
 </template>
 
 <script>
@@ -11,15 +11,11 @@ let flex = 3;
 export default {
     name: 'Home',
     components: {
-      SensorList
-
+        SensorList,
     },
-    methods: {
-
-
-    },
+    methods: {},
     data() {
-      return {
+        return {
             sensors: [
                 {
                     id: uniqueId(),
@@ -212,7 +208,7 @@ export default {
                 },
             ],
         };
-    }
+    },
 };
 </script>
 

@@ -1,28 +1,25 @@
 <template>
     <v-card tile outlined>
         <v-card-text :class="'sensor' + ' ' + triggeredCol" :id="sensor.id">
-            
-            Sensor #{{ sensor.id }}            <v-spacer></v-spacer>
+            Sensor #{{ sensor.id }} <v-spacer></v-spacer>
 
-                    
-                    
-                    
-                     <v-divider></v-divider>
-        
-    
-     <v-card-title > {{sensor.location}} <v-spacer></v-spacer> <span :class="availability.color">{{ availability.text }}</span></v-card-title >
+            <v-divider></v-divider>
 
-    <v-card-subtitle >{{ sensor.type }}</v-card-subtitle>
-                     <v-divider></v-divider>
+            <v-card-title>
+                {{ sensor.location }} <v-spacer></v-spacer>
+                <span :class="availability.color">{{
+                    availability.text
+                }}</span></v-card-title
+            >
 
+            <v-card-subtitle>{{ sensor.type }}</v-card-subtitle>
+            <v-divider></v-divider>
 
-    <v-card-actions>
-
-            <v-spacer></v-spacer>
-           <div>  Last Updated: {{ sensor.lastUpdated }}</div>
-    </v-card-actions>
-
-       </v-card-text> 
+            <v-card-actions>
+                <v-spacer></v-spacer>
+                <div>Last Updated: {{ sensor.lastUpdated }}</div>
+            </v-card-actions>
+        </v-card-text>
     </v-card>
 </template>
 
@@ -79,12 +76,12 @@ export default {
     50%,
     100% {
         background-color: rgb(255, 0, 0);
-        color: white ;
+        color: white;
     }
     25%,
     75% {
         background-color: rgb(255, 255, 255);
-        color: black ;
+        color: black;
     }
 }
 </style>
