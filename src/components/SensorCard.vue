@@ -1,9 +1,9 @@
 <template>
 <v-card>
-    <v-card-text class="sensor">
-    <div>Sensor #{{properties.id}}</div>
+    <v-card-text class="sensor" :id="id">
+    <div >Sensor #{{ id }}</div>
     <p class="display-1 text--primary">
-        Type: <span > {{properties.type}} </span>
+        Type: <span> {{type}} </span>
     </p>
     <p class="display-1 text--primary">
         Status: <span :class="availability.color" > {{availability.text}} </span>
@@ -19,25 +19,29 @@
 
 export default {
     name: 'SensorCard',
+    prop: {
+        id: {default: " asdasdasd", type: String},
+        type: {default: " asdasdasd", type: String},
+        lastUpdated: {default: " asdasdasd", type: String},
+        online: {required: true, default: true, type: Boolean}
+    },
     data() { 
         return {
-                properties: {
-                    id: 0,
-                    type: "Door Mag"
-                },
-                lastUpdated: "17:32",
-                status: {availability: true,}
+                id: this.id,
+                type: this.type,
+                lastUpdated: this.lastUpdated,
+                online: this.online
             };
     },
     computed: {
         availability() {
-                let color = (!status.availability) ? 'green--text' : 'red--text';
-                let text = (!status.availability) ? 'online' : 'offline';
-                let availability = {
+                let color = (!this.online) ? 'green--text' : 'red--text';
+                let text = (!this.online) ? 'online' : 'offline';
+                let online = {
                     "color":color,
                     "text":text
                 }
-                return availability;
+                return online;
         }
     }
 };

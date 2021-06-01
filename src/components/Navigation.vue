@@ -1,5 +1,5 @@
 <template>
-        <v-toolbar app color="blue-grey darken-3" dark class="header">
+        <v-app-bar app color="blue-grey darken-3" dark class="header">
             <v-icon inline left>mdi-eye</v-icon> 
             <v-toolbar-title >{{appTitle}}</v-toolbar-title>
 
@@ -9,7 +9,7 @@
             </template>
 
             <v-btn color="blue-grey darken-1" >REFRESH</v-btn>
-        </v-toolbar>
+        </v-app-bar>
 </template>
 
 <script>
