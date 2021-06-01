@@ -1,36 +1,219 @@
 <template>
-    <v-item-group app color="blue-grey darken-3" class="sensor">
-        <div v-for="sensor in sensors" :key="sensor.id">
-        <SensorCard id="sensor.id" type="sensor.type" lastUpdated="sensor.lastUpdated" online="sensor.online"/>
-        </div>
-    </v-item-group>
+<v-container fluid>
+      <SensorList :sensors="sensors"/>
+</v-container>
 </template>
 
 <script>
-import SensorCard from '@/components/SensorCard';
+import SensorList from '@/components/SensorList';
 import uniqueId from 'lodash.uniqueid';
-
+let flex = 3;
 export default {
+    name: 'Home',
+    components: {
+      SensorList
 
-
-    name: 'Home', 
-    components:{
-        SensorCard,
     },
-  data() {
-    return {
-      sensors: [
-        { id: uniqueId(), type: 'test0', lastUpdated: '17:30', online: true },
-        { id: uniqueId(), type: 'test1', lastUpdated: '17:31', online: true },
-        { id: uniqueId(), type: 'test2', lastUpdated: '17:32', online: true },
-        { id: uniqueId(), type: 'test3', lastUpdated: '17:33', online: true }
-      ]
-    };
-  }
+    methods: {
 
+
+    },
+    data() {
+      return {
+            sensors: [
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Living Room',
+                    lastUpdated: '17:30',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Living Room',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Living Room',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Living Room',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Gaming Room',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Gaming Room',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: true,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Gaming Room',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Kitchen',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Kitchen',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: true,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Kitchen',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Kitchen',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Bedroom',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Bedroom',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Motion',
+                    location: 'Bedroom',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Motion',
+                    location: 'Bedroom',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: true,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Motion',
+                    location: 'Bedroom',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Animal Room',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Animal Room',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Mag Switch',
+                    location: 'Animal Room',
+                    lastUpdated: '17:31',
+                    online: true,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Vibration Sensor',
+                    location: 'Animal Room',
+                    lastUpdated: '17:32',
+                    online: false,
+                    triggered: false,
+                    flex: flex,
+                },
+                {
+                    id: uniqueId(),
+                    type: 'Vibration Sensor',
+                    location: 'Animal Room',
+                    lastUpdated: '17:33',
+                    online: true,
+                    triggered: true,
+                    flex: flex,
+                },
+            ],
+        };
+    }
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

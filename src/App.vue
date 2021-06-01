@@ -1,8 +1,8 @@
 <template>
     <v-app>
-        <v-content transition="slide-x-transition">
-        <navigation></navigation>
-        <router-view></router-view>
+        <v-content>
+            <navigation></navigation>
+            <router-view></router-view>
         </v-content>
     </v-app>
 </template>
@@ -10,11 +10,9 @@
 import Navigation from '@/components/Navigation';
 export default {
     name: 'App',
-    components:{
+    components: {
         Navigation,
-        
-    }
+    },
 };
 </script>
-<style>
-</style>
+<style></style>
