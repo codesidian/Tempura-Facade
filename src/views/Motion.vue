@@ -3,6 +3,7 @@
 
 
     <svg-map :map="customTaiwan" 
+              :location-class="getLocationClass"
               @mouseover="pointLocation"
               @mouseout="unpointLocation"
               @mousemove="moveOnLocation"
@@ -17,7 +18,8 @@
 import Maps from "svg-maps";
 import { SvgMap } from "vue-svg-map";
 import { getLocationName } from '../utilities'
-var Taiwan = Maps.USA;
+import jsonSVG from './jsonSVG.json'
+var Taiwan = jsonSVG
 export default {
     name: 'Motion',
     components: {
@@ -49,7 +51,9 @@ export default {
     focusLocation(event) {
 			this.focusedLocation = getLocationName(event.target)
 		},
-
+		getLocationClass(location, index) {
+			return `svg-map__location`
+		},
     },
     data() {
         return {
@@ -75,4 +79,12 @@ export default {
 				background-color: white;
 			}
 
+.svg-map__location{
+width: 800px;
+fill:black;
+}
+.svg-map__location:hover{
+  opacity: 0.75;
+
+}
 </style>
