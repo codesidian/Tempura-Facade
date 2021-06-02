@@ -5,7 +5,7 @@
 
         <v-spacer></v-spacer>
         <template v-for="(item, index) in items">
-            <v-btn :key="index" text>{{ item.title }}</v-btn>
+            <v-btn :key="index" :to="item.to" text >{{ item.title }}</v-btn>
         </template>
 
         <v-btn color="blue-grey darken-1" disabled>REFRESH</v-btn>
@@ -19,9 +19,9 @@ export default {
         return {
             appTitle: 'TEMPURA',
             items: [
-                { title: 'Camera' },
-                { title: 'Motion' },
-                { title: 'Windows & Doors' },
+                { title: 'Home', to: "/" },
+                { title: 'Motion', to: "/Motion" },
+                { title: 'Cameras', to: "/Cameras" },
             ],
         };
     },
