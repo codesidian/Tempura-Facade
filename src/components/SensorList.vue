@@ -70,11 +70,13 @@ export default {
             return sensorlist;
         },
     },
+    //  TODO:     Prop needs to be refactored
     props: { sensors: [Array] },
     data() {
         return {
             rooms: ['living room', 'gaming room', 'kitchen', 'bedroom'],
             filters: [],
+            
         };
     },
 };
