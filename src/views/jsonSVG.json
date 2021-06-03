@@ -4,17 +4,17 @@
   "location": [
     {
       "name": "Living Room",
-      "id": "b",
+      "id": "L",
       "path": "M 0 200 L 0 450 L 300 450 L 300 200 Z"
     },
     {
       "name": "Hallway",
-      "id": "h",
+      "id": "H",
       "path": "M 0 450 L 0 700 L 150 700 L 150 450 Z"
     },
     {
       "name": "Kitchen",
-      "id": "k",
+      "id": "K",
       "path": "M 150 450 L 150 700 L 300 700 L 300 450 Z"
     }
   ]

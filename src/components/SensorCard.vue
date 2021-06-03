@@ -17,8 +17,9 @@
 
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <div>Last Updated: {{ sensor.lastUpdated }}</div>
+                <div>Last Updated: {{ sensor.lastUpdated }} </div>
             </v-card-actions>
+            
         </v-card-text>
     </v-card>
 </template>
@@ -36,7 +37,9 @@ export default {
             striggered: this.sensor.triggered,
         };
     },
+
     computed: {
+
         availability() {
             let color = this.sensor.online ? 'green--text' : 'red--text';
             let text = this.sensor.online ? 'online' : 'offline';

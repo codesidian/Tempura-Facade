@@ -28,6 +28,7 @@ export default {
         SensorCard,
         SensorFilter,
     },
+
     methods: {
         trigger: function () {
             var i;
@@ -74,7 +75,7 @@ export default {
     props: { sensors: [Array] },
     data() {
         return {
-            rooms: ['living room', 'gaming room', 'kitchen', 'bedroom'],
+            rooms: this.$store.state.rooms,
             filters: [],
             
         };

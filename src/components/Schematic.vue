@@ -12,6 +12,34 @@
 
           </svg-map>
               <span class="tooltip" :style="tooltipStyle">{{ pointedLocation }}</span>
+
+        <v-overlay
+          :absolute="absolute"
+          :value="overlay"
+        >
+        <h2>{{selectedOverlay}}</h2>
+          <v-btn
+            color="danger"
+            @click="overlay = false"
+          >
+            Show Camera
+          </v-btn>  
+          <v-divider></v-divider>        
+          <v-btn
+            color="warning"
+            @click="overlay = false"
+          >
+            Trigger Alert
+          </v-btn>
+          <v-divider></v-divider>
+          <v-btn
+            color="success"
+            @click="overlay = false"
+          >
+            Close
+          </v-btn>
+        </v-overlay>
+
 </div>
 </template>
 
@@ -31,7 +59,6 @@ export default {
     },
 
     mounted(){
-      console.log();
     },
     	methods: {
 		pointLocation(event) {
@@ -49,14 +76,28 @@ export default {
 			}
     },
     clickLocation(event) {
-			this.clickedLocation = getLocationName(event.target);
-      alert(event.target.id);
+      this.clickedLocation = getLocationName(event.target);
+      this.overlay = !this.overlay;
+      this.selectedOverlay = this.clickedLocation;
     },
     focusLocation(event) {
 			this.focusedLocation = getLocationName(event.target)
 		},
 		getLocationClass(location, index) {
-			return `svg-map__location`
+      let sensors = this.$store.state.sensors;
+      let triggered = false;
+      for (let i = 0; i < sensors.length; i++){
+          if (location.name.toLowerCase() == sensors[i].location.toLowerCase() && 
+              sensors[i].triggered){
+                triggered = true;
+          }
+      }
+      if (triggered){
+        return `svg-map__location_TRIGGERED`
+      }
+      else{
+        return `svg-map__location`
+      }
 		},
     },
     data() {
@@ -68,7 +109,10 @@ export default {
       },
       pointedLocation: null,
       tooltipStyle: null,
-      focusedLocation: null,
+      focusedLocation: null,      
+      absolute: true,
+      overlay: false,
+      selectedOverlay: "",
         };
     },
 };
@@ -92,10 +136,19 @@ img {
   max-height:100%;
   height: auto;
 }
+
+path{
+    stroke:black;
+    stroke-width: 2px;
+}
 .svg-map__location{
 fill:rgb(128, 128, 128);
 }
 .svg-map__location:hover{
   opacity: 0.75;
+}
+
+.svg-map__location_TRIGGERED{
+fill:rgb(255, 0, 0);
 }
 </style>

@@ -13,7 +13,6 @@
           tile
         >
     <Schematic :svgjson="HS" />
-
   
         </v-card>
       </v-col>
@@ -33,9 +32,13 @@ export default {
     },
 
     mounted(){
+      
     },
-    	methods: {
+    methods: {
 
+    },
+    computed:{
+ 
     },
     data() {
         return {
