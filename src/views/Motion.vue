@@ -1,25 +1,29 @@
 <template>
-<div>
+              <v-container fluid>
 
 
-    <svg-map :map="customTaiwan" 
-              :location-class="getLocationClass"
-              @mouseover="pointLocation"
-              @mouseout="unpointLocation"
-              @mousemove="moveOnLocation"
-              @focus="focusLocation"
-              @click="clickLocation"
-    />
-   <span class="tooltip" :style="tooltipStyle">{{ pointedLocation }}</span>
-   </div>
+       <svg-map :map="customSchematic" 
+                    :location-class="getLocationClass"
+                    @mouseover="pointLocation"
+                    @mouseout="unpointLocation"
+                    @mousemove="moveOnLocation"
+                    @focus="focusLocation"
+                    @click="clickLocation"
+          >
+
+          </svg-map>
+    <span class="tooltip" :style="tooltipStyle">{{ pointedLocation }}</span>
+  
+
+
+    </v-container>
 </template> 
 
 <script>
-import Maps from "svg-maps";
 import { SvgMap } from "vue-svg-map";
 import { getLocationName } from '../utilities'
 import jsonSVG from './jsonSVG.json'
-var Taiwan = jsonSVG
+var Schematic = jsonSVG
 export default {
     name: 'Motion',
     components: {
@@ -57,10 +61,10 @@ export default {
     },
     data() {
         return {
-			customTaiwan: {
-				...Taiwan,
-				label: "Custom map label",
-				locations: Taiwan.location
+			customSchematic: {
+				...Schematic,
+				label: "Our House",
+				locations: Schematic.location
       },
       pointedLocation: null,
       tooltipStyle: null,
@@ -72,19 +76,21 @@ export default {
 
 <style>
 .tooltip {
+        display:none;
 				position: fixed;
 				width: 200px;
 				padding: 10px;
 				border: 1px solid darkgray;
 				background-color: white;
 			}
+.svg-map{
+}
 
 .svg-map__location{
-width: 800px;
-fill:black;
+
+fill:rgb(128, 128, 128);
 }
 .svg-map__location:hover{
   opacity: 0.75;
-
 }
 </style>
