@@ -1,7 +1,7 @@
 <template>
 <div>
 
-               <svg-map style="" :map="customSchematic" 
+          <svg-map style="" :map="customSchematic" 
                     :location-class="getLocationClass"
                     @mouseover="pointLocation"
                     @mouseout="unpointLocation"
@@ -131,9 +131,8 @@ export default {
 svg,
 img {
   display: block;
-  width:100%;
-  max-width: 100%;
-  max-height:100%;
+  width:250px;
+
   height: auto;
 }
 

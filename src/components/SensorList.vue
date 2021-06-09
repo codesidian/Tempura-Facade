@@ -6,7 +6,7 @@
         <SensorFilter :filters="rooms" v-on:add-filter="setFilter($event)" />
         <v-divider />
 
-        <v-row dense>
+        <v-row>
             <v-col
                 v-for="sensor in this.filteredList"
                 :key="sensor.id"

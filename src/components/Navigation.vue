@@ -2,13 +2,6 @@
     <v-app-bar app color="blue-grey darken-3" dark class="header">
         <v-icon inline left>mdi-eye</v-icon>
         <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
-
-        <v-spacer></v-spacer>
-        <template v-for="(item, index) in items">
-            <v-btn :key="index" :to="item.to" text >{{ item.title }}</v-btn>
-        </template>
-
-        <v-btn color="blue-grey darken-1" disabled>REFRESH</v-btn>
     </v-app-bar>
 </template>
 
@@ -20,8 +13,7 @@ export default {
             appTitle: 'TEMPURA',
             items: [
                 { title: 'Home', to: "/" },
-                { title: 'Motion', to: "/Motion" },
-                { title: 'Cameras', to: "/Cameras" },
+                { title: 'Security', to: "/Security" },
             ],
         };
     },

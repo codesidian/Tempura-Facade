@@ -68,7 +68,7 @@ export default {
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    animation-iteration-count: 4;
+    animation-iteration-count: infinite;
     animation-name: flash;
 }
 .flash {

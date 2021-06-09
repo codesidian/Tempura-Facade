@@ -1,34 +1,39 @@
 <template>
 <v-container fluid>
+<MainMenuButton/>
 
+    <v-row >
+      
+      <v-col md="2">
+        
+      </v-col>
 
-    <v-row no-gutters>
-      <v-col
-        cols="12"
-        sm="4"
-      >
-        <v-card
-          class="pa-2"
-          outlined
-          tile
-        >
-    <Schematic :svgjson="HS" />
-  
+      <v-col md="10">
+        <v-card elevation="0">
+    <Schematic :svgjson="HS"  />
         </v-card>
       </v-col>
+
+
     </v-row>
+
+
+
+
 
     </v-container>
 </template> 
 
 <script>
 import Schematic from '@/components/Schematic';
+import MainMenuButton from '@/components/MainMenuButton';
 import jsonSVG from './jsonSVG.json'
 var HouseSchematic = jsonSVG
 export default {
     name: 'Motion',
     components: {
-        Schematic
+        Schematic,
+        MainMenuButton
     },
 
     mounted(){
