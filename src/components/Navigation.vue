@@ -1,7 +1,9 @@
 <template>
     <v-app-bar app color="blue-grey darken-3" dark class="header">
+        <v-spacer/>
         <v-icon inline left>mdi-eye</v-icon>
-        <v-toolbar-title>{{ appTitle }}</v-toolbar-title>
+        <v-toolbar-title> {{ appTitle }}</v-toolbar-title>
+        <v-spacer/>
     </v-app-bar>
 </template>
 

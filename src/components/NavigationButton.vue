@@ -21,7 +21,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&display=swap');
 a {
     font-family: 'Raleway', sans-serif;
-     min-height:150px;
+     min-height:250px;
 
 }
 </style>

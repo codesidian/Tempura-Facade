@@ -1,18 +1,18 @@
 <template>
     <v-row >
       <v-col md="12">
-<NavigationButton :buttonColour="'green'" :buttonText="'BACK'" @click="goBack()"/>      
+  <v-btn block color="green" @click="$router.go(-1)"> back </v-btn>
+
 </v-col>
  </v-row >
 </template>
 
 <script>
-import NavigationButton from '@/components/NavigationButton';
 
 export default {
-    name: 'MainMenuButton',
+    name: 'BackButton',
     components: {
-        NavigationButton
+        
     },
     methods:{
         goBack(){
@@ -30,9 +30,9 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&display=swap');
-a {
+button {
     font-family: 'Raleway', sans-serif;
-     min-height:150px;
+     min-height:75px;
      
 
 }
