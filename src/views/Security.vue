@@ -1,7 +1,11 @@
 <template>
 
     <v-container fill-height>
-<MainMenuButton/>
+      <BackButton/>
+
+      <div  class="header">
+        <h1>Security</h1>
+      </div>
 
     <v-row align="center" justify="center">
       
@@ -29,13 +33,12 @@
 
 <script>
 import NavigationButton from '@/components/NavigationButton';
-import MainMenuButton from '@/components/MainMenuButton';
-
+import BackButton from '@/components/BackButton';
 export default {
     name: 'Security',
     components: {
         NavigationButton,
-        MainMenuButton
+        BackButton
     },
     methods: {},
     data() {
@@ -47,5 +50,12 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;500&display=swap');
 
+.header{
+  font-family: 'Raleway', sans-serif;
+  text-align:center;
+  margin:auto;
+
+}
 </style>

@@ -2,6 +2,15 @@
 
     <v-container fill-height>
 
+    <v-row >
+      
+      <v-col md="12">
+            <NotificationArea/>
+     </v-col>
+
+
+    </v-row>
+
 
     <v-row align="center" justify="center">
       
@@ -10,7 +19,7 @@
 
       <v-col md="4">
         <v-card elevation="0">
-<NavigationButton :buttonColour="'green'" :buttonText="'HOME'" :buttonLocation="'/'"/>
+<NavigationButton :buttonColour="'green'" :buttonText="'our home'" :buttonLocation="'/OurHome'"/>
         </v-card>
       </v-col>
 
@@ -29,11 +38,13 @@
 
 <script>
 import NavigationButton from '@/components/NavigationButton';
+import NotificationArea from '@/components/NotificationArea';
 
 export default {
     name: 'Home',
     components: {
-        NavigationButton
+        NavigationButton,
+        NotificationArea
     },
     methods: {},
     data() {
@@ -45,5 +56,9 @@ export default {
 </script>
 
 <style>
+.Notifcation-Area{
+padding:25px;
+text-align:center;
 
+}
 </style>

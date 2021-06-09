@@ -1,19 +1,17 @@
 <template>
-<v-container fluid>
-<MainMenuButton/>
+<v-container fill-height>
+<BackButton/>
+    <v-row align="center" justify="center">
 
-    <v-row >
-      
-      <v-col md="2">
-        
+      <v-col md="4">
       </v-col>
-
-      <v-col md="10">
+      <v-col md="4">
         <v-card elevation="0">
     <Schematic :svgjson="HS"  />
         </v-card>
       </v-col>
-
+      <v-col md="4">
+      </v-col>
 
     </v-row>
 
@@ -26,14 +24,14 @@
 
 <script>
 import Schematic from '@/components/Schematic';
-import MainMenuButton from '@/components/MainMenuButton';
+import BackButton from '@/components/BackButton';
 import jsonSVG from './jsonSVG.json'
 var HouseSchematic = jsonSVG
 export default {
     name: 'Motion',
     components: {
         Schematic,
-        MainMenuButton
+        BackButton
     },
 
     mounted(){
