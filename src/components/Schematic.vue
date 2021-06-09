@@ -64,7 +64,7 @@ export default {
 		pointLocation(event) {
 			this.pointedLocation = getLocationName(event.target)
 		},
-		unpointLocation(event) {
+		unpointLocation() {
 			this.pointedLocation = null
 			this.tooltipStyle = { display: 'none' }
 		},
@@ -83,7 +83,7 @@ export default {
     focusLocation(event) {
 			this.focusedLocation = getLocationName(event.target)
 		},
-		getLocationClass(location, index) {
+		getLocationClass(location) {
       let sensors = this.$store.state.sensors;
       let triggered = false;
       for (let i = 0; i < sensors.length; i++){
